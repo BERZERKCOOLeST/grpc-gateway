@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.27.1
 // 	protoc        (unknown)
-// source: protoc-gen-openapiv2/options/annotations.proto
+// source: protoc-gen-openapiv2-format/options/annotations.proto
 
 package options
 
@@ -27,7 +27,7 @@ var file_protoc_gen_openapiv2_options_annotations_proto_extTypes = []protoimpl.E
 		Field:         1042,
 		Name:          "grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger",
 		Tag:           "bytes,1042,opt,name=openapiv2_swagger",
-		Filename:      "protoc-gen-openapiv2/options/annotations.proto",
+		Filename:      "protoc-gen-openapiv2-format/options/annotations.proto",
 	},
 	{
 		ExtendedType:  (*descriptorpb.MethodOptions)(nil),
@@ -35,7 +35,7 @@ var file_protoc_gen_openapiv2_options_annotations_proto_extTypes = []protoimpl.E
 		Field:         1042,
 		Name:          "grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation",
 		Tag:           "bytes,1042,opt,name=openapiv2_operation",
-		Filename:      "protoc-gen-openapiv2/options/annotations.proto",
+		Filename:      "protoc-gen-openapiv2-format/options/annotations.proto",
 	},
 	{
 		ExtendedType:  (*descriptorpb.MessageOptions)(nil),
@@ -43,7 +43,7 @@ var file_protoc_gen_openapiv2_options_annotations_proto_extTypes = []protoimpl.E
 		Field:         1042,
 		Name:          "grpc.gateway.protoc_gen_openapiv2.options.openapiv2_schema",
 		Tag:           "bytes,1042,opt,name=openapiv2_schema",
-		Filename:      "protoc-gen-openapiv2/options/annotations.proto",
+		Filename:      "protoc-gen-openapiv2-format/options/annotations.proto",
 	},
 	{
 		ExtendedType:  (*descriptorpb.ServiceOptions)(nil),
@@ -51,7 +51,7 @@ var file_protoc_gen_openapiv2_options_annotations_proto_extTypes = []protoimpl.E
 		Field:         1042,
 		Name:          "grpc.gateway.protoc_gen_openapiv2.options.openapiv2_tag",
 		Tag:           "bytes,1042,opt,name=openapiv2_tag",
-		Filename:      "protoc-gen-openapiv2/options/annotations.proto",
+		Filename:      "protoc-gen-openapiv2-format/options/annotations.proto",
 	},
 	{
 		ExtendedType:  (*descriptorpb.FieldOptions)(nil),
@@ -59,7 +59,7 @@ var file_protoc_gen_openapiv2_options_annotations_proto_extTypes = []protoimpl.E
 		Field:         1042,
 		Name:          "grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field",
 		Tag:           "bytes,1042,opt,name=openapiv2_field",
-		Filename:      "protoc-gen-openapiv2/options/annotations.proto",
+		Filename:      "protoc-gen-openapiv2-format/options/annotations.proto",
 	},
 }
 

@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.27.1
 // 	protoc        (unknown)
-// source: protoc-gen-openapiv2/options/openapiv2.proto
+// source: protoc-gen-openapiv2-format/options/openapiv2.proto
 
 package options
 

@@ -10,7 +10,7 @@
 
   ```sh
   go get github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway
-  go get github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2
+  go get github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2-format
   ```
 
 ## I still have a problem!

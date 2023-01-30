@@ -15,7 +15,7 @@ import (
 	"github.com/BERZERKCOOLeST/grpc-gateway/v2/internal/descriptor"
 	"github.com/BERZERKCOOLeST/grpc-gateway/v2/internal/descriptor/openapiconfig"
 	"github.com/BERZERKCOOLeST/grpc-gateway/v2/internal/httprule"
-	openapi_options "github.com/BERZERKCOOLeST/grpc-gateway/v2/protoc-gen-openapiv2/options"
+	openapi_options "github.com/BERZERKCOOLeST/grpc-gateway/v2/protoc-gen-openapiv2-format/options"
 	"github.com/BERZERKCOOLeST/grpc-gateway/v2/runtime"
 	"github.com/google/go-cmp/cmp"
 	"google.golang.org/genproto/googleapis/api/annotations"

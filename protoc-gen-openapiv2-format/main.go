@@ -8,7 +8,7 @@ import (
 
 	"github.com/BERZERKCOOLeST/grpc-gateway/v2/internal/codegenerator"
 	"github.com/BERZERKCOOLeST/grpc-gateway/v2/internal/descriptor"
-	"github.com/BERZERKCOOLeST/grpc-gateway/v2/protoc-gen-openapiv2/internal/genopenapi"
+	"github.com/BERZERKCOOLeST/grpc-gateway/v2/protoc-gen-openapiv2-format/internal/genopenapi"
 	"github.com/BERZERKCOOLeST/grpc-gateway/v2/utilities"
 	"github.com/golang/glog"
 	"google.golang.org/protobuf/proto"

@@ -11,7 +11,7 @@ import (
 
 	"github.com/BERZERKCOOLeST/grpc-gateway/v2/internal/descriptor"
 	gen "github.com/BERZERKCOOLeST/grpc-gateway/v2/internal/generator"
-	openapi_options "github.com/BERZERKCOOLeST/grpc-gateway/v2/protoc-gen-openapiv2/options"
+	openapi_options "github.com/BERZERKCOOLeST/grpc-gateway/v2/protoc-gen-openapiv2-format/options"
 	"github.com/golang/glog"
 	anypb "github.com/golang/protobuf/ptypes/any"
 	statuspb "google.golang.org/genproto/googleapis/rpc/status"

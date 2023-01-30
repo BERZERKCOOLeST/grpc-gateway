@@ -8,7 +8,7 @@ import (
 
 	"github.com/BERZERKCOOLeST/grpc-gateway/v2/internal/codegenerator"
 	"github.com/BERZERKCOOLeST/grpc-gateway/v2/internal/descriptor/openapiconfig"
-	"github.com/BERZERKCOOLeST/grpc-gateway/v2/protoc-gen-openapiv2/options"
+	"github.com/BERZERKCOOLeST/grpc-gateway/v2/protoc-gen-openapiv2-format/options"
 	"github.com/BurntSushi/toml"
 	"github.com/golang/glog"
 	"github.com/iancoleman/strcase"

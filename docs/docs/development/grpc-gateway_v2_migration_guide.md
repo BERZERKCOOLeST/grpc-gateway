@@ -17,7 +17,7 @@ See [the original issue](https://github.com/grpc-ecosystem/grpc-gateway/issues/6
 for more information. Apart from the new name, the only real difference to users will be a slightly different proto annotation:
 
 ```protobuf
-import "protoc-gen-openapiv2/options/annotations.proto";
+import "protoc-gen-openapiv2-format/options/annotations.proto";
 ```
 
 instead of

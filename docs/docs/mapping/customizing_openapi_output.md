@@ -25,7 +25,7 @@ message MyMessage {
 You can define options on your Protocol Buffer services, operations, messages, and field definitions to customize your Open API output. For instance, to customize the [OpenAPI Schema Object](https://swagger.io/specification/v2/#schemaObject) for messages and fields:
 
 ```protobuf
-import "protoc-gen-openapiv2/options/annotations.proto";
+import "protoc-gen-openapiv2-format/options/annotations.proto";
 
 message ABitOfEverything {
     option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_schema) = {
@@ -671,7 +671,7 @@ syntax = "proto3";
 package helloproto.v1;
 
 import "google/api/annotations.proto";
-import "protoc-gen-openapiv2/options/annotations.proto";
+import "protoc-gen-openapiv2-format/options/annotations.proto";
 
 option go_package = "helloproto/v1;helloproto";
 
@@ -746,7 +746,7 @@ syntax = "proto3";
 package helloproto.v1;
 
 import "google/api/annotations.proto";
-import "protoc-gen-openapiv2/options/annotations.proto";
+import "protoc-gen-openapiv2-format/options/annotations.proto";
 
 option go_package = "helloproto/v1;helloproto";
 

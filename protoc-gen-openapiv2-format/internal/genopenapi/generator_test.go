@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/BERZERKCOOLeST/grpc-gateway/v2/internal/descriptor"
-	"github.com/BERZERKCOOLeST/grpc-gateway/v2/protoc-gen-openapiv2/internal/genopenapi"
+	"github.com/BERZERKCOOLeST/grpc-gateway/v2/protoc-gen-openapiv2-format/internal/genopenapi"
 	"gopkg.in/yaml.v3"
 
 	"google.golang.org/protobuf/encoding/prototext"

@@ -90,7 +90,7 @@ jobs:
         with:
           push: true
           tags: plugins.buf.build/grpc-ecosystem/openapiv2:${{ github.ref_name }}-1
-          context: .github/plugins/protoc-gen-openapiv2
+          context: .github/plugins/protoc-gen-openapiv2-format
           platforms: linux/amd64
           build-args: |
             RELEASE_VERSION=${{ github.ref_name }}

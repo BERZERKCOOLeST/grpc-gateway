@@ -11,7 +11,7 @@ import (
 	pathenum "github.com/BERZERKCOOLeST/grpc-gateway/v2/examples/internal/proto/pathenum"
 	sub "github.com/BERZERKCOOLeST/grpc-gateway/v2/examples/internal/proto/sub"
 	sub2 "github.com/BERZERKCOOLeST/grpc-gateway/v2/examples/internal/proto/sub2"
-	_ "github.com/BERZERKCOOLeST/grpc-gateway/v2/protoc-gen-openapiv2/options"
+	_ "github.com/BERZERKCOOLeST/grpc-gateway/v2/protoc-gen-openapiv2-format/options"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	status "google.golang.org/genproto/googleapis/rpc/status"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"

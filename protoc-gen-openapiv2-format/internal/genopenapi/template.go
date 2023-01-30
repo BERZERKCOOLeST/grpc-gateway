@@ -19,7 +19,7 @@ import (
 
 	"github.com/BERZERKCOOLeST/grpc-gateway/v2/internal/casing"
 	"github.com/BERZERKCOOLeST/grpc-gateway/v2/internal/descriptor"
-	openapi_options "github.com/BERZERKCOOLeST/grpc-gateway/v2/protoc-gen-openapiv2/options"
+	openapi_options "github.com/BERZERKCOOLeST/grpc-gateway/v2/protoc-gen-openapiv2-format/options"
 	"github.com/golang/glog"
 	"google.golang.org/genproto/googleapis/api/annotations"
 	"google.golang.org/genproto/googleapis/api/visibility"

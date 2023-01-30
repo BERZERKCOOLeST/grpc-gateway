@@ -6,9 +6,9 @@ import (
 	"go/format"
 	"path"
 
+	"github.com/BERZERKCOOLeST/grpc-gateway/v2/internal/descriptor"
+	gen "github.com/BERZERKCOOLeST/grpc-gateway/v2/internal/generator"
 	"github.com/golang/glog"
-	"github.com/grpc-ecosystem/grpc-gateway/v2/internal/descriptor"
-	gen "github.com/grpc-ecosystem/grpc-gateway/v2/internal/generator"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/types/pluginpb"
 )

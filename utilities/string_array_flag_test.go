@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/grpc-ecosystem/grpc-gateway/v2/utilities"
+	"github.com/BERZERKCOOLeST/grpc-gateway/v2/utilities"
 )
 
 func TestStringArrayFlag(t *testing.T) {

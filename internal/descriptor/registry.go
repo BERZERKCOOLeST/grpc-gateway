@@ -792,13 +792,13 @@ func (r *Registry) FieldName(f *Field) string {
 	if r.formatConfig != nil {
 		switch r.formatConfig.FieldPattern {
 		case FieldPatternCamel:
-			name = strcase.ToCamel(f.GetJsonName())
+			name = strcase.ToCamel(name)
 		case FieldPatternSnake:
-			name = strcase.ToSnake(f.GetJsonName())
+			name = strcase.ToSnake(name)
 		case FieldPatternKebab:
-			name = strcase.ToKebab(f.GetJsonName())
+			name = strcase.ToKebab(name)
 		case FieldPatternLowerCamel:
-			name = strcase.ToLowerCamel(f.GetJsonName())
+			name = strcase.ToLowerCamel(name)
 		}
 	}
 	return name

@@ -1,0 +1,6 @@
+FieldPattern="CamelCase"
+
+[Path]
+OldPath="/Action/"
+ReplacePath="/Action?"
+

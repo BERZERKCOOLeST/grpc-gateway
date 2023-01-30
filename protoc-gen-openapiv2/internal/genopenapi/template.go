@@ -1081,6 +1081,8 @@ func renderServices(services []*descriptor.Service, paths openapiPathsObject, re
 				operationFunc := operationForMethod(b.HTTPMethod)
 				// Iterate over all the OpenAPI parameters
 				parameters := openapiParametersObject{}
+				// Replace path.
+				b.PathTmpl.Template = reg.GetReplacedPath(b.PathTmpl.Template)
 				// split the path template into its parts
 				parts := templateToParts(b.PathTmpl.Template, reg, meth.RequestType.Fields, msgs)
 				// extract any constraints specified in the path placeholders into ECMA regular expressions

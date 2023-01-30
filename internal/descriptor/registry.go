@@ -2,13 +2,16 @@ package descriptor
 
 import (
 	"fmt"
+	"io/ioutil"
 	"sort"
 	"strings"
 
+	"github.com/BurntSushi/toml"
 	"github.com/golang/glog"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/internal/codegenerator"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/internal/descriptor/openapiconfig"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2/options"
+	"github.com/iancoleman/strcase"
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
 	"google.golang.org/genproto/googleapis/api/annotations"
@@ -109,7 +112,7 @@ type Registry struct {
 	// messageOptions is a mapping of fully-qualified message name to additional OpenAPI message options
 	messageOptions map[string]*options.Schema
 
-	//serviceOptions is a mapping of fully-qualified service name to additional OpenAPI service options
+	// serviceOptions is a mapping of fully-qualified service name to additional OpenAPI service options
 	serviceOptions map[string]*options.Tag
 
 	// fieldOptions is a mapping of the fully-qualified name of the parent message concat
@@ -140,7 +143,27 @@ type Registry struct {
 	// useAllOfForRefs, if set, will use allOf as container for $ref to preserve same-level
 	// properties
 	useAllOfForRefs bool
+
+	// FormatConfig
+	formatConfig *FormatConfig
 }
+
+type FormatConfig struct {
+	Path *struct {
+		OldPath     string
+		ReplacePath string
+	}
+	FieldPattern FieldPatternType
+}
+
+type FieldPatternType string
+
+const (
+	FieldPatternCamel      FieldPatternType = "CamelCase"
+	FieldPatternSnake      FieldPatternType = "snake_case"
+	FieldPatternKebab      FieldPatternType = "kebab-case"
+	FieldPatternLowerCamel FieldPatternType = "lowerCamelCase"
+)
 
 type repeatedFieldSeparator struct {
 	name string
@@ -176,6 +199,20 @@ func NewRegistry() *Registry {
 		annotationMap:  make(map[annotationIdentifier]struct{}),
 		recursiveDepth: 1000,
 	}
+}
+
+func (r *Registry) LoadFormatConfig(filePath string) error {
+	if filePath == "" {
+		return nil
+	}
+	data, err := ioutil.ReadFile(filePath)
+	if err != nil {
+		return err
+	}
+	if err = toml.Unmarshal(data, &r.formatConfig); err != nil {
+		return err
+	}
+	return nil
 }
 
 // Load loads definitions of services, methods, messages, enumerations and fields from "req".
@@ -740,11 +777,31 @@ func (r *Registry) GetOpenAPIFieldOption(qualifiedField string) (*options.JSONSc
 	return opt, ok
 }
 
-func (r *Registry) FieldName(f *Field) string {
-	if r.useJSONNamesForFields {
-		return f.GetJsonName()
+func (r *Registry) GetReplacedPath(original string) string {
+	if r.formatConfig == nil || r.formatConfig.Path == nil || r.formatConfig.Path.OldPath == "" {
+		return original
 	}
-	return f.GetName()
+	return strings.ReplaceAll(original, r.formatConfig.Path.OldPath, r.formatConfig.Path.ReplacePath)
+}
+
+func (r *Registry) FieldName(f *Field) string {
+	name := f.GetName()
+	if r.useJSONNamesForFields {
+		name = f.GetJsonName()
+	}
+	if r.formatConfig != nil {
+		switch r.formatConfig.FieldPattern {
+		case FieldPatternCamel:
+			name = strcase.ToCamel(f.GetJsonName())
+		case FieldPatternSnake:
+			name = strcase.ToSnake(f.GetJsonName())
+		case FieldPatternKebab:
+			name = strcase.ToKebab(f.GetJsonName())
+		case FieldPatternLowerCamel:
+			name = strcase.ToLowerCamel(f.GetJsonName())
+		}
+	}
+	return name
 }
 
 func (r *Registry) CheckDuplicateAnnotation(httpMethod string, httpTemplate string, svc *Service) error {
